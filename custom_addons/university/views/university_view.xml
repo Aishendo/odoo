@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="university_list_view" model="ir.ui.view">
+        <field name="name">university.list.view</field>
+        <field name="model">uni.profile</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="email" />
+                <field name="phone" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="university_form_view" model="ir.ui.view">
+         <field name="name">university.form.view</field>
+         <field name="model">uni.profile</field>
+         <field name="arch" type="xml">
+            <form>
+                <field name="name" />
+                <field name="email" />
+                <field name="phone" />
+            </form>
+        </field>
+    </record>
+
+    <record id="action_uni_profile" model="ir.actions.act_window">
+        <field name="name">University Profile</field>
+        <field name="res_model">uni.profile</field>
+        <field name="view_mode">tree, form</field>
+    </record>
+
+    <menuitem id="uni_root_menu" name="University" />
+    <menuitem id="uni_sub_menu" parent="uni_root_menu" />
+    <menuitem id="uni_profile_menu" action="action_uni_profile" />
+</odoo>
