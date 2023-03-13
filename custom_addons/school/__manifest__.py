@@ -11,7 +11,7 @@
     'depends': ['base'],
     'data': [
         "security/ir.model.access.csv",
-        "views/university_view.xml"
+        "views/univer_view.xml"
     ],
     'demo': [],
     'installable': True,

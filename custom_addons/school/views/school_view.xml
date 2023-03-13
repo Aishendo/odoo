@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <act_window
+            id="action_uni_profile"
+            name="Profile"
+            res_model="univer.profile" />
+
+    <menuitem
+            id="uni_root_menu"
+            name="University"
+            sequence="0"/>
+
+    <menuitem
+            id="uni_sub_menu"
+            name="Profile Details"
+            parent="uni_root_menu"
+            sequence="0"/>
+
+    <menuitem
+            id="uni_profile_menu"
+            name="Profile"
+            action="action_uni_profile"
+            parent="uni_sub_menu"
+            sequence="0"/>
+
+    <record id="university_form_view" model="ir.ui.view">
+        <field name="name">university.form.view</field>
+        <field name="model">univer.profile</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="email"/>
+                        <field name="phone"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="university_list_view" model="ir.ui.view">
+        <field name="name">university.list.view</field>
+        <field name="model">univer.profile</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="email"/>
+                <field name="phone"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_uni_profile" model="ir.actions.act_window">
+        <field name="name">University Profile</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">univer.profile</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your profile !
+            </p>
+        </field>
+    </record>
+</odoo>
